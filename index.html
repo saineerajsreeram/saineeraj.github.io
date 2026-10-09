@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a090e">
+<meta name="description" content="Portfolio of Sai Neeraj Sreeram, a B.Tech AIML student building with AI and data.">
+<title>Sai Neeraj Sreeram — Building with AI &amp; data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a090e;--bg2:#121018;--ink:#f1eee9;--muted:#9b96a6;--line:#25222e;--lilac:#b9a6ff;--peach:#ffb38a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;color:var(--lilac)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 14px;z-index:20}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:10;background:linear-gradient(var(--bg),rgba(10,9,14,0));backdrop-filter:blur(6px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700}
+.brand i{font-style:normal;width:36px;height:36px;border-radius:50%;border:1px solid var(--lilac);display:grid;place-items:center;font-size:.8rem;color:var(--lilac)}
+nav a{margin-left:26px;text-decoration:none;color:var(--muted);font-size:.93rem;transition:color .25s}
+nav a span{color:var(--lilac);margin-right:4px}
+nav a:hover{color:var(--ink)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:8px 18px;font:inherit;cursor:pointer}
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;position:relative;padding:120px 0 70px}
+.hero::before{content:"";position:absolute;width:560px;height:560px;right:-120px;top:10%;background:radial-gradient(circle,rgba(185,166,255,.28),transparent 65%);filter:blur(30px);animation:drift 12s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center;position:relative}
+.tag{color:var(--muted);font-size:.95rem;display:flex;align-items:center;gap:10px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#58d68d;box-shadow:0 0 0 0 rgba(88,214,141,.6);animation:pulse 2s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 10px rgba(88,214,141,0)}}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(3.2rem,9vw,6.6rem);line-height:.98;letter-spacing:-.02em;margin:22px 0 22px}
+.lead{max-width:480px;color:var(--muted);font-size:1.15rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{padding:13px 24px;border-radius:99px;text-decoration:none;font-weight:500;border:1px solid var(--line);transition:transform .25s,background .25s,color .25s,border-color .25s}
+.btn.main{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{transform:translateY(-3px);border-color:var(--lilac)}
+.btn.main:hover{background:var(--lilac);border-color:var(--lilac)}
+.live{position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(120% 100% at 30% 0%,#1c1830,#0a090e)}
+.live canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.live .hud{position:absolute;left:16px;top:14px;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.live .hud::before{content:"";width:7px;height:7px;border-radius:50%;background:#ff5d5d;animation:pulse2 1.6s infinite}
+@keyframes pulse2{50%{opacity:.25}}
+.live .out{position:absolute;left:16px;bottom:14px;right:16px;display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted)}
+.live .out b{color:var(--peach);font-weight:500}
+.cap{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;margin-top:12px}
+.scroll{position:absolute;bottom:26px;left:28px;color:var(--muted);font-size:.85rem}
+/* sections */
+section.s{padding:110px 0;border-top:1px solid var(--line)}
+.label{color:var(--lilac);font-size:.9rem;margin-bottom:14px}
+h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.05;margin:0 0 28px;letter-spacing:-.015em}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+.two p{color:var(--muted);margin:0 0 16px}
+.facts{display:grid;gap:14px;align-content:start}
+.fact{border:1px solid var(--line);border-radius:18px;padding:20px 22px;background:var(--bg2)}
+.fact small{display:block;color:var(--muted);font-size:.82rem}
+.fact b{display:block;font-size:1.1rem;font-weight:500}
+.cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:34px}
+.card{border:1px solid var(--line);border-radius:22px;padding:30px;background:var(--bg2);transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-8px);border-color:var(--lilac)}
+.num{font:italic 1.6rem "Instrument Serif",serif;color:var(--peach)}
+.card h3{font:400 1.9rem/1.15 "Instrument Serif",serif;margin:10px 0 6px}
+.card .meta{color:var(--lilac);font-size:.88rem;margin-bottom:12px}
+.card p,.card li{color:var(--muted);font-size:.98rem}
+.card ul{padding-left:18px;margin:0}
+.card.soon{border-style:dashed;display:grid;place-content:center;text-align:center;min-height:240px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:.88rem;color:var(--ink);transition:background .2s,color .2s}
+.chips span:hover{background:var(--lilac);color:var(--bg)}
+.path{display:grid;gap:0;margin-top:30px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.row .when{color:var(--muted);font-size:.92rem}
+.row h3{font:400 1.7rem/1.2 "Instrument Serif",serif;margin:0 0 4px}
+.row p{margin:0;color:var(--muted)}
+.row p b{color:var(--peach);font-weight:500}
+.tools{margin-top:40px}
+.tools h4{margin:0 0 4px;color:var(--muted);font-weight:500;font-size:.95rem}
+.know{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:30px}
+.know div{border-top:1px solid var(--line);padding-top:16px}
+.know h4{margin:0 0 8px;color:var(--lilac);font-weight:500}
+.know p{margin:0;color:var(--muted)}
+.contact h2{font-size:clamp(2.6rem,7vw,5.2rem)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:40px}
+.links a{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:18px;padding:18px 22px;text-decoration:none;background:var(--bg2);overflow-wrap:anywhere;transition:border-color .25s,transform .25s}
+.links a:hover{border-color:var(--lilac);transform:translateY(-4px)}
+.links small{display:block;color:var(--muted);font-size:.8rem}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* motion */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.hero .wrap>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:nth-child(2){animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+@media (max-width:820px){
+  .hero .wrap,.two{grid-template-columns:1fr;gap:34px}
+  .live{max-width:420px}
+  .menu{display:block}
+  nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 28px 20px}
+  nav.open{display:block}
+  nav a{display:block;margin:0;padding:10px 0}
+  .row{grid-template-columns:1fr;gap:6px}
+  section.s{padding:80px 0}
+  .scroll{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+  <a class="brand" href="#top"><i>SN</i>Sai Neeraj Sreeram</a>
+  <button class="menu" id="menu" aria-expanded="false">Menu</button>
+  <nav id="nav">
+    <a href="#about"><span>01</span>About</a><a href="#work"><span>02</span>Work</a><a href="#path"><span>03</span>Path</a><a href="#contact"><span>04</span>Contact</a>
+  </nav>
+</div></header>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="tag">Ongole · India · 2026</div>
+      <h1>Learning fast,<br><em>building with AI &amp; data.</em></h1>
+      <p class="lead">I'm Sai Neeraj Sreeram, a B.Tech AIML student who turns ideas into practical, intelligent software.</p>
+      <div class="cta"><a class="btn main" href="#work">See my work ↘</a><a class="btn mail" href="mailto:saineeraj2007@gmail.com?subject=Hello%20Sai%20Neeraj">Say hello ↗</a></div>
+    </div>
+    <div>
+      <div class="live" role="img" aria-label="Animated neural network showing data flowing through layers">
+        <canvas id="nn"></canvas>
+        <div class="hud">LIVE · neural network</div>
+        <div class="out"><span>epoch <b id="ep">1</b></span><span>loss <b id="ls">1.000</b></span><span>accuracy <b id="ac">50.0%</b></span></div>
+      </div>
+      <div class="cap"><span>Sai Neeraj Sreeram</span><span>AIML student</span></div>
+    </div>
+  </div>
+  <div class="scroll">Scroll to explore ↓</div>
+</div>
+
+<section class="s" id="about"><div class="wrap">
+  <div class="label rv">01 / About</div>
+  <div class="two">
+    <div class="rv">
+      <h2>Still early.<br><em>Already building.</em></h2>
+      <p>I'm a second-year B.Tech student strengthening my foundations in programming, data structures, and AI/ML. I enjoy data analysis, prediction, automation, and AI-powered applications.</p>
+      <p>I learn by doing: internships, job simulations, certifications, and daily problem solving on LeetCode. I'm also learning Japanese and have completed the N5 level.</p>
+    </div>
+    <div class="facts">
+      <div class="fact rv" style="--d:.1s"><small>Currently</small><b>B.Tech · AIML, RMDEC</b></div>
+      <div class="fact rv" style="--d:.2s"><small>Certified</small><b>Oracle · AI &amp; Agentic AI</b></div>
+      <div class="fact rv" style="--d:.3s"><small>Open to</small><b>Internships · AI, Data, Web</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="work"><div class="wrap">
+  <div class="label rv">02 / Selected work</div>
+  <h2 class="rv">Things I've <em>done so far.</em></h2>
+  <div class="cards">
+    <article class="card rv">
+      <div class="num">01</div>
+      <h3>Web Development <em>Intern</em></h3>
+      <div class="meta">Thinnex · HTML / CSS / JavaScript</div>
+      <ul><li>Built responsive, user-friendly web pages.</li><li>Improved components, layouts, navigation, and styling.</li></ul>
+    </article>
+    <article class="card rv" style="--d:.12s">
+      <div class="num">02</div>
+      <h3>GenAI Data Analytics <em>Simulation</em></h3>
+      <div class="meta">Tata · Data analytics / Generative AI</div>
+      <ul><li>Solved practical business problems with data.</li><li>Applied GenAI concepts to support decisions.</li></ul>
+    </article>
+    <article class="card rv" style="--d:.24s">
+      <div class="num">03</div>
+      <h3>CurrentIQ <em>Project</em></h3>
+      <div class="meta">Electrical safety monitoring</div>
+      <p>Continuously monitors an electrical system and detects risks such as:</p>
+      <ul><li>Overcurrent</li><li>Overheating</li><li>Voltage abnormalities</li><li>Leakage</li><li>Short-circuit indications</li><li>Abnormal power consumption</li></ul>
+    </article>
+    <article class="card soon rv" style="--d:.36s">
+      <div><div class="num">✦</div><h3>More <em>coming soon</em></h3><p>New builds are in progress. Check back soon.</p></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="s" id="path"><div class="wrap">
+  <div class="label rv">03 / Path so far</div>
+  <h2 class="rv">A foundation <em>with momentum.</em></h2>
+  <div class="path">
+    <div class="row rv"><div class="when">Now</div><div><h3>B.Tech, AI &amp; Machine Learning</h3><p>RMDEC · 2nd year</p></div></div>
+    <div class="row rv"><div class="when">Aug 2026</div><div><h3>Agentic AI Certified Foundations Associate</h3><p>Oracle University · <b>valid until Aug 17, 2028</b></p></div></div>
+    <div class="row rv"><div class="when">Jul 2026</div><div><h3>OCI Certified AI Foundations Associate</h3><p>Oracle University · <b>valid until Jul 30, 2028</b></p></div></div>
+    <div class="row rv"><div class="when">Recent</div><div><h3>Japanese N5 Level</h3><p>MIRAI School of Languages · Certificate of completion</p></div></div>
+  </div>
+  <div class="tools rv">
+    <h4>Technical toolkit</h4>
+    <div class="chips"><span>Python</span><span>Java</span><span>C</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>SQL</span><span>DBMS</span><span>Generative AI</span><span>Agentic AI</span><span>Machine Learning</span><span>Data Analytics</span></div>
+  </div>
+</div></section>
+
+<section class="s" id="good"><div class="wrap">
+  <div class="label rv">Good to know</div>
+  <h2 class="rv">The small <em>details matter.</em></h2>
+  <div class="know">
+    <div class="rv"><h4>Achievements</h4><p>Two Oracle certifications in AI and Agentic AI. Japanese N5 completed.</p></div>
+    <div class="rv" style="--d:.1s"><h4>Interests</h4><p>AI / ML · Data analytics · Problem solving</p></div>
+    <div class="rv" style="--d:.2s"><h4>Languages</h4><p>English · Japanese (N5)</p></div>
+    <div class="rv" style="--d:.3s"><h4>Practice</h4><p>Daily data structures and algorithms on LeetCode</p></div>
+  </div>
+</div></section>
+
+<section class="s contact" id="contact"><div class="wrap">
+  <div class="label rv">04 / Let's connect · Ongole</div>
+  <h2 class="rv">Have a good <em>problem?</em><br>Let's talk.</h2>
+  <p class="rv" style="color:var(--muted);max-width:520px">Whether it's an internship, a project, or a conversation about building with AI and data, I'd love to hear from you.</p>
+  <div class="links">
+    <a class="rv mail" href="mailto:saineeraj2007@gmail.com?subject=Hello%20Sai%20Neeraj"><span><small>Email</small>saineeraj2007@gmail.com</span>↗</a>
+    <a class="rv" style="--d:.08s" href="tel:+918317681173"><span><small>Phone</small>+91 83176 81173</span>↗</a>
+    <a class="rv" style="--d:.16s" href="https://www.linkedin.com/in/sai-neeraj-sreeram-490370374/" target="_blank" rel="noopener"><span><small>LinkedIn</small>in / sai-neeraj-sreeram</span>↗</a>
+    <a class="rv" style="--d:.24s" href="https://leetcode.com/u/SREERAMVENKATASAINEERAJ/" target="_blank" rel="noopener"><span><small>LeetCode</small>SREERAMVENKATASAINEERAJ</span>↗</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Sai Neeraj Sreeram</span><a href="#top">Back to top ↑</a></div></footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var m=document.getElementById('menu'),n=document.getElementById('nav');
+  m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(){n.classList.remove('open');m.setAttribute('aria-expanded',false)});
+})();
+
+(function(){
+  var c=document.getElementById('nn'),x=c.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2);
+  var L=[4,6,6,3],nodes=[],pulses=[],t=0,ep=1;
+  function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    nodes=L.map(function(n,i){var a=[];for(var j=0;j<n;j++)a.push({x:W*(.12+.76*i/(L.length-1)),y:H*(.2+.6*(j+.5)/n),g:0});return a})}
+  function spawn(){var a=Math.random()*L[0]|0;pulses.push({l:0,a:a,b:Math.random()*L[1]|0,p:0})}
+  function frame(){
+    x.clearRect(0,0,W,H);t++;
+    if(t%14===0)spawn();
+    x.lineWidth=1;
+    for(var i=0;i<nodes.length-1;i++)nodes[i].forEach(function(a){nodes[i+1].forEach(function(b){
+      x.strokeStyle='rgba(185,166,255,.13)';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()})});
+    pulses=pulses.filter(function(p){
+      var a=nodes[p.l][p.a],b=nodes[p.l+1][p.b];p.p+=.025;
+      var px=a.x+(b.x-a.x)*p.p,py=a.y+(b.y-a.y)*p.p;
+      x.fillStyle='#ffb38a';x.beginPath();x.arc(px,py,2.6,0,6.3);x.fill();
+      if(p.p>=1){b.g=1;if(p.l+1<L.length-1){p.l++;p.a=p.b;p.b=Math.random()*L[p.l+1]|0;p.p=0;return true}return false}
+      return true});
+    nodes.forEach(function(col){col.forEach(function(n){
+      n.g*=.94;x.fillStyle='rgba(185,166,255,'+(.35+n.g*.65)+')';
+      x.shadowColor='#b9a6ff';x.shadowBlur=6+n.g*16;x.beginPath();x.arc(n.x,n.y,5+n.g*2.5,0,6.3);x.fill();x.shadowBlur=0})});
+    if(t%12===0){ep++;var k=1-Math.exp(-ep/90);
+      document.getElementById('ep').textContent=ep;
+      document.getElementById('ls').textContent=(1-.93*k+Math.random()*.02).toFixed(3);
+      document.getElementById('ac').textContent=((50+46*k)+Math.random()*.4).toFixed(1)+'%';
+      if(ep>400){ep=1}}
+    if(!reduce)requestAnimationFrame(frame)}
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  size();addEventListener('resize',size);
+  if(reduce){for(var i=0;i<30;i++)spawn();frame()}else frame();
+})();
+
+(function(){
+  var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  document.querySelectorAll('a.mail').forEach(function(a){a.addEventListener('click',function(e){
+    if(mobile)return;
+    e.preventDefault();
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=saineeraj2007@gmail.com&su='+encodeURIComponent('Hello Sai Neeraj'),'_blank','noopener');
+  })});
+})();
+</script>
+</body>
+</html>
